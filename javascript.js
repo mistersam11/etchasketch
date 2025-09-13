@@ -1,6 +1,7 @@
 const container = document.querySelector('#container');
 let normal = 16;
 
+
 function generateGrid(choice) {
     for (let i = 0; i < (choice * choice); i++) {
     const box = document.createElement('div');
@@ -10,7 +11,8 @@ function generateGrid(choice) {
     box.style.height = boxSize;
     container.appendChild(box);
     box.addEventListener('mouseover', () => {
-    box.classList.add('used')
+    box.classList.add('used');
+    box.style.backgroundColor = random_rgba();
 });
 }
 }
@@ -22,6 +24,12 @@ function resetGrid() {
         container.removeChild(container.lastChild)
     }
 }
+
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')';
+}
+
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', () => {
