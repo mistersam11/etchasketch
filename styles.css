@@ -24,12 +24,6 @@ h1 {
     box-sizing: border-box;
     border: 0.5px black solid;
     background-color: white;
-    opacity: 1;
-
-}
-
-.used {
-    background-color: black;
 }
 
 #menu {

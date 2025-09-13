@@ -9,10 +9,13 @@ function generateGrid(choice) {
     box.classList.toggle('box');
     box.style.width = boxSize;
     box.style.height = boxSize;
+    box.style.opacity = 1;
     container.appendChild(box);
     box.addEventListener('mouseover', () => {
-    box.classList.add('used');
-    box.style.backgroundColor = random_rgba();
+    box.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+    if (box.style.opacity > 0) {
+    box.style.opacity = parseFloat(box.style.opacity) - 0.1;
+    }
 });
 }
 }
@@ -24,12 +27,6 @@ function resetGrid() {
         container.removeChild(container.lastChild)
     }
 }
-
-function random_rgba() {
-    let o = Math.round, r = Math.random, s = 255;
-    return 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')';
-}
-
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', () => {
