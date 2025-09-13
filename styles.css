@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+h1 {
+    margin: 10px 0;
+}
+
 #container {
     margin: 1vw auto;
     display: flex;
